@@ -17,9 +17,19 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
+;; TODO
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done 1)
+
+;; ido - Interacatively DO things
 (require 'ido)
 (ido-mode t)
 (ido-everywhere 1)
+
+(elpy-enable)
+
 
 (global-set-key
  "\M-x"
@@ -31,7 +41,15 @@
       "M-x "
       (all-completions "" obarray 'commandp))))))
 
+;; COMPlete ANYthing - Text Completions
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; Python completion using company-jedi
+;;(defun my/python-mode-hook ()
+;;  (add-to-list 'company-backends 'company-jedi))
+;;
+;;(add-hook 'python-mode-hook 'my/python-mode-hook)
+;; End python completion here
 
 (global-flycheck-mode)
 
@@ -43,7 +61,9 @@
  '(custom-safe-themes
    (quote
     ("1a212b23eb9a9bedde5ca8d8568b1e6351f6d6f989dd9e9de7fba8621e8ef82d" default)))
- '(package-selected-packages (quote (flycheck ac-clang company gruber-darker-theme))))
+ '(package-selected-packages
+   (quote
+    (company-jedi flycheck ac-clang company gruber-darker-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

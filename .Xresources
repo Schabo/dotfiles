@@ -1,4 +1,6 @@
 
+xterm*termName: xterm-256color
+
 URxvt*font: xft:DejaVuSansMono:size=12
 
 ! special
