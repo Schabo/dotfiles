@@ -1,5 +1,7 @@
 
 xterm*termName: xterm-256color
+xterm*faceName: xft:Dejavusansmono
+xterm*faceSize: 12
 
 URxvt*font: xft:DejaVuSansMono:size=12
 
