@@ -22,6 +22,8 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done 1)
+(setq org-agenda-files (list "~/org_notes/Ideas.org"
+			     "~/org_notes/Projects.org"))
 
 ;; ido - Interacatively DO things
 (require 'ido)
