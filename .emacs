@@ -1,74 +1,24 @@
 (require 'package)
-
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("Melpa", "https://melpa.org/packages/") t)
 
 (package-initialize)
 
+## Disable start screen
 (setq inhibit-startup-screen t)
 
+## Disable toolbar, menubar and scrollbar
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
+## Enable linenumbering
 (global-display-line-numbers-mode)
 
-(set-frame-font "MonoSpace-12")
-
+## Change save dir
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
-;; TODO
-(require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done 1)
-(setq org-agenda-files (list "~/org_notes/Ideas.org"
-			     "~/org_notes/Projects.org"))
-
-;; ido - Interacatively DO things
-(require 'ido)
-(ido-mode t)
-(ido-everywhere 1)
-
-(elpy-enable)
-
-
-(global-set-key
- "\M-x"
- (lambda ()
-   (interactive)
-   (call-interactively
-    (intern
-     (ido-completing-read
-      "M-x "
-      (all-completions "" obarray 'commandp))))))
-
-;; COMPlete ANYthing - Text Completions
-(add-hook 'after-init-hook 'global-company-mode)
-
-;; Python completion using company-jedi
-;;(defun my/python-mode-hook ()
-;;  (add-to-list 'company-backends 'company-jedi))
-;;
-;;(add-hook 'python-mode-hook 'my/python-mode-hook)
-;; End python completion here
-
-(global-flycheck-mode)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("1a212b23eb9a9bedde5ca8d8568b1e6351f6d6f989dd9e9de7fba8621e8ef82d" default)))
- '(package-selected-packages
-   (quote
-    (company-jedi flycheck ac-clang company gruber-darker-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+## Install and enable use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package))
