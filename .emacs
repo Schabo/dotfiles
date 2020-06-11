@@ -21,8 +21,8 @@
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
 ;; Install and enable use-package
-;; (unless (package-installed-p 'use-package)
-;;   (package-refresh-contents)
-;;   (package-install 'use-package))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 (require 'use-package))
 
