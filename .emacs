@@ -3,21 +3,21 @@
 
 (package-initialize)
 
-## Disable start screen
+;; Disable start screen
 (setq inhibit-startup-screen t)
 
-## Disable toolbar, menubar and scrollbar
+;; Disable toolbar, menubar and scrollbar
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
-## Enable linenumbering
+;; Enable linenumbering
 (global-display-line-numbers-mode)
 
-## Change save dir
+;; Change save dir
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
-## Install and enable use-package
+;; Install and enable use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
