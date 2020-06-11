@@ -1,3 +1,6 @@
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (require 'package)
 (add-to-list 'package-archives '("Melpa", "https://melpa.org/packages/") t)
 
@@ -22,3 +25,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package))
+
+
+
+
+  3 error: Package ‘use-package-’ is unavailable
