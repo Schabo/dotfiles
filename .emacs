@@ -24,5 +24,14 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(require 'use-package))
+(require 'use-package)
 
+(use-package ido
+	     :config
+	     (setq ido-everywhere t)
+	     (ido-mode))
+
+(use-package elpy
+	     :ensure t
+	     :init
+	     (elpy-enable))
