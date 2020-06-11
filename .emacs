@@ -26,7 +26,3 @@
   (package-install 'use-package))
 (require 'use-package))
 
-
-
-
-  3 error: Package ‘use-package-’ is unavailable
