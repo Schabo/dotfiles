@@ -2,7 +2,7 @@
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (require 'package)
-(add-to-list 'package-archives '("Melpa", "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("Melpa", "https://melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -21,8 +21,8 @@
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
 ;; Install and enable use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
 (require 'use-package))
 
