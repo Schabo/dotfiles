@@ -95,7 +95,17 @@
 		    ("\\.markdown\\'" . markdown-mode))
 	     :init (setq markdown-command "multimarkdown"))
 
+;; Install Org mode
+(use-package org
+	     :ensure t
+	     :mode (("\\.org$\\" . org-mode))
+	     :config
+	     (progn
+	       (setq define-key global-map "\C-cl" 'org-store-link)
+	       (setq define-key global-map "\C-ca" 'org-agenda)
+	       (setq org-log-done 1)
+	       (setq org-agenda-files (list "~/.emacs.d/Notes.org"))
+	     
+
 ;; TODO:
-;; company mode
-;; flycheck mode
 ;; org, for TODO
