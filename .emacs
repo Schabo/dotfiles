@@ -69,6 +69,12 @@
 	     :config
 	     (add-hook 'after-init-hook 'global-flycheck-mode))
 
+;; Install company-mode
+(use-package company
+	     :ensure t
+	     :config
+	     (add-hook 'after-init-hook 'global-company-mode))
+
 ;; Install Rainbow-delimiters
 (use-package rainbow-delimiters
 	     :ensure t
