@@ -39,6 +39,9 @@
       "M-x "
       (all-completions "" obarray 'commandp))))))
 
+;; Remove whitespace at end of lines when saving
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Install and enable use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
