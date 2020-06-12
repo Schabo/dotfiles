@@ -86,6 +86,15 @@
 	     :ensure t
 	     :bind ("C-x g" . magit-status))
 
+;; Install Markdown
+(use-package markdown-mode
+	     :ensure t
+	     :commands (markdown-mode gfm-mode)
+	     :mode (("README\\.md\\'" . gfm-mode)
+		    ("\\.md\\'" . markdown-mode)
+		    ("\\.markdown\\'" . markdown-mode))
+	     :init (setq markdown-command "multimarkdown"))
+
 ;; TODO:
 ;; company mode
 ;; flycheck mode
