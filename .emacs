@@ -63,10 +63,13 @@
 	     :init
 	     (elpy-enable))
 
+;; Rainbow 
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; TODO:
 ;; company mode
 ;; flycheck mode
-;; M-x keybind
-;; Install theme
 ;; org, for TODO
