@@ -48,6 +48,9 @@
   (package-install 'use-package))
 (require 'use-package)
 
+;; Install theme
+(use-package gruber-darker-theme :ensure t)
+
 ;; Install ido
 (use-package ido
 	     :config
