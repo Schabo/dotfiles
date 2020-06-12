@@ -104,7 +104,7 @@
 	       (setq define-key global-map "\C-cl" 'org-store-link)
 	       (setq define-key global-map "\C-ca" 'org-agenda)
 	       (setq org-log-done 1)
-	       (setq org-agenda-files (list "~/.emacs.d/Notes.org"))
+	       (setq org-agenda-files (list "~/.emacs.d/Notes.org"))))
 	     
 
 ;; TODO:
