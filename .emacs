@@ -18,7 +18,15 @@
 (global-display-line-numbers-mode)
 
 ;; Change save dir
-(setq backup-directory-alist '(("." . "~/.emacs_saves")))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups"))
+      backup-by-copying t
+      version-control t
+      delete-old-versions t
+      kept-old-versions 20
+      kept-new-versions 5)
+
+;; Change yes/no to y/n
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Bind M-x
 (global-set-key
