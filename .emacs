@@ -65,9 +65,14 @@
 
 ;; Rainbow 
 (use-package rainbow-delimiters
-  :ensure t
-  :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+	     :ensure t
+	     :config
+	     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+;; Instll Magit
+(use-package magit
+	     :ensure t
+	     :bind ("C-x g" . magit-status))
 
 ;; TODO:
 ;; company mode
