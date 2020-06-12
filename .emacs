@@ -63,13 +63,19 @@
 	     :init
 	     (elpy-enable))
 
-;; Rainbow 
+;; Install flycheck
+(use-package flycheck
+	     :ensure t
+	     :config
+	     (add-hook 'after-init-hook 'global-flycheck-mode))
+
+;; Install Rainbow-delimiters
 (use-package rainbow-delimiters
 	     :ensure t
 	     :config
 	     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-;; Instll Magit
+;; Install Magit
 (use-package magit
 	     :ensure t
 	     :bind ("C-x g" . magit-status))
