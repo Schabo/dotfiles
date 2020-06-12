@@ -98,7 +98,7 @@
 ;; Install Org mode
 (use-package org
 	     :ensure t
-	     :mode (("\\.org$\\" . org-mode))
+	     :mode (("\\.org$" . org-mode))
 	     :config
 	     (progn
 	       (setq define-key global-map "\C-cl" 'org-store-link)
