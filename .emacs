@@ -101,11 +101,11 @@
 	     :mode (("\\.org$" . org-mode))
 	     :config
 	     (progn
-	       (setq define-key global-map "\C-cl" 'org-store-link)
-	       (setq define-key global-map "\C-ca" 'org-agenda)
 	       (setq org-log-done 1)
 	       (setq org-agenda-files (list "~/.emacs.d/org_docs/Notes.org"))))
 	     
+(setq define-key global-map "\C-cl" 'org-store-link)
+(setq define-key global-map "\C-ca" 'org-agenda)
 
 ;; TODO:
 ;; org, for TODO
